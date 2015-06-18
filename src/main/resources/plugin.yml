@@ -1,6 +1,6 @@
 name: TakeMeHome
 main: net.anothereon.bukkit.plugins.TakeMeHome
-author: TheWyrmberg
+author: Christian Nordbakk
 version: 1.1
 depend: [ProtocolLib, UUIDProvider]
 
