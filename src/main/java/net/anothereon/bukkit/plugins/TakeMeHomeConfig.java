@@ -34,7 +34,9 @@ public class TakeMeHomeConfig {
         this.world = world;
     }
 
-    public int getDimension() { return this.dimension; }
+    public int getDimension() {
+        return this.dimension;
+    }
 
     public void setDimension(int dimension) {
         this.dimension = dimension;

@@ -33,12 +33,12 @@ public class TakeMeHome extends JavaPlugin {
         this.config = config;
     }
 
-	public void onEnable() { 
+    public void onEnable() {
 
         saveDefaultConfig();
         this.setConfig(new TakeMeHomeConfig(getConfig()));
 
         getCommand("takemehome").setExecutor(new TakeMeHomeCommand(this));
         getCommand("takemehomereload").setExecutor(new ReloadCommand(this));
-	}
+    }
 }

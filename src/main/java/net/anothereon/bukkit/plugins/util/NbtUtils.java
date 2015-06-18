@@ -1,5 +1,22 @@
 package net.anothereon.bukkit.plugins.util;
 
+/*
+    This file is part of TakeMeHome
+
+    TakeMeHome is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    TakeMeHome is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import com.comphenix.protocol.wrappers.nbt.io.NbtBinarySerializer;
 import com.google.common.io.Closeables;
@@ -7,13 +24,9 @@ import org.bukkit.World;
 
 import java.io.*;
 import java.util.UUID;
-import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-/**
- * Created by Christian on 13/06/2015.
- */
 public class NbtUtils {
 
     public static NbtCompound loadPlayerData(World world, UUID playerUuid) throws IOException {
@@ -48,7 +61,7 @@ public class NbtUtils {
     public static NbtCompound loadLevelData(World world) throws IOException {
         File levelData = new File(world.getWorldFolder(), "level.dat");
 
-        if(!levelData.exists())
+        if (!levelData.exists())
             throw new IOException(
                     String.format("The world %s in directory %s doesn not exist.", world.getName(), world.getWorldFolder().getName())
             );

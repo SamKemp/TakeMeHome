@@ -17,11 +17,9 @@ package net.anothereon.bukkit.plugins.commands;
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.anothereon.bukkit.plugins.TakeMeHome;
 import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import com.comphenix.protocol.wrappers.nbt.NbtFactory;
-import com.comphenix.protocol.wrappers.nbt.io.NbtBinarySerializer;
-import com.google.common.io.Closeables;
+import net.anothereon.bukkit.plugins.TakeMeHome;
 import net.anothereon.bukkit.plugins.util.NbtUtils;
 import net.kaikk.mc.uuidprovider.UUIDProvider;
 import org.bukkit.ChatColor;
@@ -31,11 +29,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.UUID;
 import java.util.logging.Level;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
 
 public class TakeMeHomeCommand implements CommandExecutor {
 
@@ -55,7 +51,7 @@ public class TakeMeHomeCommand implements CommandExecutor {
                 return false;
             }
 
-            UUID uuid = null;
+            UUID uuid;
             try {
                 uuid = UUID.fromString(args[0]);
             } catch (IllegalArgumentException ex) {
