@@ -1,0 +1,30 @@
+name: TakeMeHome
+main: net.anothereon.bukkit.plugins.TakeMeHome
+author: TheWyrmberg
+version: 1.1
+depend: [ProtocolLib, UUIDProvider]
+
+commands:
+  takemehome:
+    aliases: [tmh]
+    persmission: takemehome.admin.tmh
+    description: Changes the login spawn location of the player to the configured location and world
+    usage: /<command> <player name|uuid>
+  takemehomereload:
+    aliases: [tmhr]
+    permission: takemehome.admin.reload
+    description: Reloads the plugin and config
+    usage: /<command>
+permissions:
+  takemehome.admin.*:
+    description: Access to all admin commands
+    default: op
+    children:
+      takemehome.admin.tmh: true
+      takmehome.admin.reload: true
+  takemehome.admin.tmh:
+    description: Allows resetting of a offline players position
+    default: op
+  takemehome.admin.reload:
+    description: Allows reloading the cofig
+    default: op

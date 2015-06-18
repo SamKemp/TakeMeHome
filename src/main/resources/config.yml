@@ -1,0 +1,5 @@
+# Name of main world containing playerdata
+main-world: world
+
+# Dimension id where the player should spawn
+spawn-dimension-id: 0
