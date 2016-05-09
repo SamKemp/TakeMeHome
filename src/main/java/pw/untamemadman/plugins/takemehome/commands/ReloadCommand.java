@@ -1,4 +1,4 @@
-package net.anothereon.bukkit.plugins.commands;
+package pw.untamemadman.plugins.takemehome.commands;
 
 /*
     This file is part of TakeMeHome
@@ -17,8 +17,8 @@ package net.anothereon.bukkit.plugins.commands;
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.anothereon.bukkit.plugins.TakeMeHome;
-import net.anothereon.bukkit.plugins.TakeMeHomeConfig;
+import pw.untamemadman.plugins.takemehome.TakeMeHome;
+import pw.untamemadman.plugins.takemehome.TakeMeHomeConfig;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

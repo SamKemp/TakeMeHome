@@ -1,4 +1,4 @@
-package net.anothereon.bukkit.plugins;
+package pw.untamemadman.plugins.takemehome;
 
 /*
     This file is part of TakeMeHome
@@ -17,8 +17,8 @@ package net.anothereon.bukkit.plugins;
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import net.anothereon.bukkit.plugins.commands.ReloadCommand;
-import net.anothereon.bukkit.plugins.commands.TakeMeHomeCommand;
+import pw.untamemadman.plugins.takemehome.commands.ReloadCommand;
+import pw.untamemadman.plugins.takemehome.commands.TakeMeHomeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TakeMeHome extends JavaPlugin {

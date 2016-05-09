@@ -1,4 +1,4 @@
-package net.anothereon.bukkit.plugins.commands;
+package pw.untamemadman.plugins.takemehome.commands;
 
 /*
     This file is part of TakeMeHome
@@ -19,9 +19,8 @@ package net.anothereon.bukkit.plugins.commands;
 
 import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import com.comphenix.protocol.wrappers.nbt.NbtFactory;
-import net.anothereon.bukkit.plugins.TakeMeHome;
-import net.anothereon.bukkit.plugins.util.NbtUtils;
-import net.kaikk.mc.uuidprovider.UUIDProvider;
+import pw.untamemadman.plugins.takemehome.TakeMeHome;
+import pw.untamemadman.plugins.takemehome.util.NbtUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -46,22 +45,24 @@ public class TakeMeHomeCommand implements CommandExecutor {
 
         if (sender.hasPermission("takemehome.admin.tmh") || sender.isOp()) {
             if (args.length != 1) {
-                sender.sendMessage(ChatColor.YELLOW + "Usage: " + ChatColor.WHITE + "/tmh <playername | UUID>");
-                plugin.getLogger().severe("command called without a player name or UUID argument!");
+                sender.sendMessage(ChatColor.YELLOW + "Usage: " + ChatColor.WHITE + "/tmh <UUID>");
+                plugin.getLogger().severe("command called without a UUID argument!");
                 return false;
             }
 
             UUID uuid;
             try {
                 uuid = UUID.fromString(args[0]);
-            } catch (IllegalArgumentException ex) {
-                uuid = UUIDProvider.retrieveUUID(args[0]);
-
+            } catch (IllegalArgumentException ex)
+            {
+                sender.sendMessage(ChatColor.RED + "Argument is not a valid UUID!");
+                plugin.getLogger().severe("TakeMeHome command called with invalid UUID argument!");
+                return false;
             }
 
             if (uuid == null) {
-                sender.sendMessage(ChatColor.RED + "Argument is not a valid player name or UUID!");
-                plugin.getLogger().severe("TakeMeHome command called with invalid player name or UUID argument!");
+                sender.sendMessage(ChatColor.RED + "Argument is not a valid UUID!");
+                plugin.getLogger().severe("TakeMeHome command called with invalid UUID argument!");
                 return false;
             }
 
